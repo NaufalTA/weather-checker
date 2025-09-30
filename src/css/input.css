@@ -1,0 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
+@import "tailwindcss";
+
+@theme {
+    --font-instrument: "Instrument Sans", sans-serif;
+    --font-inria: "Inria Sans", sans-serif;
+}
