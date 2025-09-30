@@ -2,9 +2,9 @@ import { displayWeatherUI } from './component/weatherUI.js';
 import { displayErrorUI } from './component/errorUI.js';
 
 async function getWeatherData(cityName) {
-    const API = 'http://api.weatherapi.com/v1/forecast.json?';
+    const API = 'https://api.weatherapi.com/v1/forecast.json?';
     const params = new URLSearchParams({
-        key: "e24fb6437d124a699f784239252909",
+        key: "e24fb6437d124a699f784239252909",  
         q: cityName
     });
 
