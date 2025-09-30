@@ -49,14 +49,14 @@ function displayWeatherUI(data) {
 
             <div class="flex gap-12 mt-12 max-md:gap-8 max-md:mt-10">
                 <div class="flex gap-1 items-center">
-                    <img src="/src/img/material-symbols-light_water.svg" alt="water icon" class="h-20 max-md:h-15">
+                    <img src="src/img/material-symbols-light_water.svg" alt="water icon" class="h-20 max-md:h-15">
                     <div class="flex-col">
                         <h1 class="font-inria text-4xl max-md:text-2xl" id="humidityDisplay">${data.current.humidity}%</h1>
                         <p class="font-instrument">Humidity</p>
                     </div>
                 </div>
                 <div class="flex gap-2 items-center">
-                    <img src="/src/img/solar_wind-linear.svg" alt="wind icon" class="h-15 max-md:h-10">
+                    <img src="src/img/solar_wind-linear.svg" alt="wind icon" class="h-15 max-md:h-10">
                     <div class="flex-col">
                         <h1 class="font-inria text-4xl max-md:text-2xl" id="windSpeedDisplay">${data.current.wind_kph}km/h</h1>
                         <p class="font-instrument">Wind Speed</p>
