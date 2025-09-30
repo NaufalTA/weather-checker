@@ -22,10 +22,8 @@ async function getWeatherData(cityName) {
 }
 
 document.getElementById("formLocation").addEventListener('submit', (e) => {
-    const mainDisplay = document.getElementById("mainDisplay");
     const city = document.getElementById('inputLocation').value;
 
-    mainDisplay.innerHTML = '';
     getWeatherData(city);
     e.preventDefault();
 })
