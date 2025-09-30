@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --minify",
-    "start": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+    "start": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
+    "postinstall": "chmod +x ./node_modules/.bin/tailwindcss"
   },
   "author": "NaufalTA",
   "license": "ISC",
