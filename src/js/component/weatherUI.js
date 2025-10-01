@@ -22,28 +22,28 @@ function getIconWeather(weather, dateTime) {
 
     if (cerah.includes(weather)) {
         if (hours > 5 && hours < 19) {
-            return 'src/img/mingcute_sun-line.svg'
+            return './src/img/mingcute_sun-line.svg'
         } else {
-            return 'src/img/solar_moon-line-duotone.svg'
+            return './src/img/solar_moon-line-duotone.svg'
         }
     } else if (matahariBerawan.includes(weather)) {
         if (hours > 5 && hours < 19) {
-            return 'src/img/lineicons_cloud-sun.svg'
+            return './src/img/lineicons_cloud-sun.svg'
         } else {
-            return 'src/img/fluent-mdl2_partly-cloudy-night.svg'
+            return './src/img/fluent-mdl2_partly-cloudy-night.svg'
         }
     } else if (berawan.includes(weather)) {
-        return 'src/img/fluent_weather-cloudy-48-regular.svg'
+        return './src/img/fluent_weather-cloudy-48-regular.svg'
     } else if (kabut.includes(weather)) {
-        return 'src/img/mdi_weather-fog.svg'
+        return './src/img/mdi_weather-fog.svg'
     } else if (hujan.includes(weather)) {
-        return 'src/img/material-symbols_rainy-outline.svg'
+        return './src/img/material-symbols_rainy-outline.svg'
     } else if (hujanPetir.includes(weather)) {
-        return 'src/img/carbon_thunderstorm-strong.svg'
+        return './src/img/carbon_thunderstorm-strong.svg'
     } else if (salju.includes(weather)) {
-        return 'src/img/fluent_weather-snow-48-regular.svg'
+        return './src/img/fluent_weather-snow-48-regular.svg'
     } else if (hujanSaljuBadai.includes(weather)) {
-        return 'src/img/wi_night-snow-thunderstorm.svg'
+        return './src/img/wi_night-snow-thunderstorm.svg'
     }
 
     console.log(weather);
