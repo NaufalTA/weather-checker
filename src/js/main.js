@@ -4,7 +4,7 @@ import { changeBackgroundUI } from './component/backgroundColor.js';
 
 async function getWeatherData(cityName) {
     const API = 'https://api.weatherapi.com/v1/forecast.json?';
-    const API_KEY = process.env.API_KEY;
+    const API_KEY = 'e24fb6437d124a699f784239252909';
     const params = new URLSearchParams({
         key: API_KEY,
         q: cityName
