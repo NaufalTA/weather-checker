@@ -1,10 +1,10 @@
 import { displayWeatherUI } from './component/weatherUI.js';
 import { displayErrorUI } from './component/errorUI.js';
 import { changeBackgroundUI } from './component/backgroundColor.js';
-import { API_KEY } from './config.js';
 
 async function getWeatherData(cityName) {
     const API = 'https://api.weatherapi.com/v1/forecast.json?';
+    const API_KEY = process.env.API_KEY;
     const params = new URLSearchParams({
         key: API_KEY,
         q: cityName
