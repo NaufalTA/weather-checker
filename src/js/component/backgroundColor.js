@@ -25,7 +25,7 @@ function changeBackgroundUI(data){
 
     removeBackgroundColour();
 
-    if(hours > 5 && hours < 18){
+    if(hours >= 5 && hours <= 18){
         if(cerah.includes(weatherCode)){
             document.body.classList.add('from-[#FFD885]', 'to-[#359EFF]');
         } else if(matahariBerawan.includes(weatherCode)){
