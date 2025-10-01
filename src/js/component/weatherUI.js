@@ -1,24 +1,41 @@
+function getDay(dateTime) {
+    const time = new Date(dateTime);
+    const formatter = new Intl.DateTimeFormat('en-US', {
+        weekday: 'long'
+    });
+    const day = formatter.format(time);
+
+    return day;
+}
+
 function getIconWeather(weather, dateTime) {
     const hours = parseInt(dateTime.split(' ')[1].split(':')[0]);
 
     const cerah = [1000];
     const matahariBerawan = [1003];
     const berawan = [1006, 1009];
-    const hujan = [1063, 1150, 1153, 1168, 1171, 1180, 1183, 1186, 1189, 1192, 1195, 1198, 1201, 1240, 1243, 1246];
+    const kabut = [1030, 1135, 1147]; 
+    const hujan = [1063, 1150, 1153, 1168, 1171, 1180, 1183, 1186, 1189, 1192, 1195, 1198, 1201, 1240, 1243, 1246, 1072];
     const hujanPetir = [1087, 1273, 1276];
     const salju = [1066, 1114, 1210, 1213, 1216, 1219, 1222, 1225, 1255, 1258, 1069, 1204, 1207, 1237, 1249, 1252, 1261, 1264];
     const hujanSaljuBadai = [1117, 1279, 1282];
 
-    if (cerah.includes(weather) && hours > 5 && hours < 19) {
-        return 'src/img/mingcute_sun-line.svg'
-    } else if (cerah.includes(weather)) {
-        return 'src/img/solar_moon-line-duotone.svg'
-    } else if (matahariBerawan.includes(weather) && hours > 5 && hours < 19) {
-        return 'src/img/lineicons_cloud-sun.svg'
+    if (cerah.includes(weather)) {
+        if (hours > 5 && hours < 19) {
+            return 'src/img/mingcute_sun-line.svg'
+        } else {
+            return 'src/img/solar_moon-line-duotone.svg'
+        }
     } else if (matahariBerawan.includes(weather)) {
-        return 'src/img/fluent-mdl2_partly-cloudy-night.svg'
+        if (hours > 5 && hours < 19) {
+            return 'src/img/lineicons_cloud-sun.svg'
+        } else {
+            return 'src/img/fluent-mdl2_partly-cloudy-night.svg'
+        }
     } else if (berawan.includes(weather)) {
         return 'src/img/fluent_weather-cloudy-48-regular.svg'
+    } else if (kabut.includes(weather)) {
+        return 'src/img/mdi_weather-fog.svg'
     } else if (hujan.includes(weather)) {
         return 'src/img/material-symbols_rainy-outline.svg'
     } else if (hujanPetir.includes(weather)) {
@@ -28,6 +45,8 @@ function getIconWeather(weather, dateTime) {
     } else if (hujanSaljuBadai.includes(weather)) {
         return 'src/img/wi_night-snow-thunderstorm.svg'
     }
+
+    console.log(weather);
 }
 
 function displayWeatherUI(data) {
@@ -35,11 +54,13 @@ function displayWeatherUI(data) {
     const dateTime = data.location.localtime;
 
     const iconWeather = getIconWeather(codeWeather, dateTime);
+    const day = getDay(dateTime);
+    const hours = dateTime.split(' ')[1];
 
     document.getElementById("mainDisplay").innerHTML = `
             <p class="font-inria text-lg max-md:text-base" id="datetimeDisplay">${data.location.country}</p>
             <h1 class="font-instrument text-7xl max-md:text-4xl" id="cityDisplay">${data.location.name}</h1>
-            <p class="font-inria text-lg font-light max-md:text-base" id="datetimeDisplay">${data.location.localtime}</p>
+            <p class="font-inria text-lg font-light max-md:text-base" id="datetimeDisplay">${day}, ${hours}</p>
             
             <div class="flex flex-col items-center mt-2">
                 <img src="${iconWeather}" alt="weather icon" id="weatherIconDisplay" class="w-50 max-md:w-45">

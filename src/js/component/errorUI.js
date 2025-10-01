@@ -4,6 +4,7 @@ function getError(error){
     } else if(error >= 500 && error <= 600){
         return 'Server Error! Come again later...'
     }
+    return 'Kesalahan jaringan, Coba lagi.'
 }
 
 function displayErrorUI(error) {
